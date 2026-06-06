@@ -1,1 +1,247 @@
-h
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sosh Archive 2030</title>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+
+<div class="background-glow"></div>
+<div class="dust"></div>
+
+<!-- COVER -->
+
+<section id="cover" class="cover-screen">
+
+    <div class="cover-book" id="openBook">
+
+        <img
+            src="assets/cover-book.jpg"
+            alt="Sosh Archive"
+            class="cover-image"
+        >
+
+        <div class="cover-overlay">
+
+            <div class="archive-year">
+                2030
+            </div>
+
+            <h1>
+                SOSH ARCHIVE
+            </h1>
+
+            <p>
+                A record of how belonging evolved.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BOOK -->
+
+<section id="bookSection" class="book-section hidden">
+
+    <!-- TOC -->
+
+    <nav class="chapter-tabs">
+
+        <button data-category="social">
+            Social
+        </button>
+
+        <button data-category="events">
+            Events
+        </button>
+
+        <button data-category="insider">
+            Inside The Insider
+        </button>
+
+        <button data-category="membership">
+            Membership
+        </button>
+
+        <button data-category="experiences">
+            Signature Experiences
+        </button>
+
+        <button data-category="between">
+            Between Moments
+        </button>
+
+        <button data-category="partnerships">
+            Partnerships
+        </button>
+
+        <button data-category="journeys">
+            Journeys
+        </button>
+
+        <button data-category="roadmap">
+            Roadmap
+        </button>
+
+    </nav>
+
+    <!-- BOOK -->
+
+    <div class="book-container">
+
+        <!-- LEFT PAGE -->
+
+        <div class="book-page left-page">
+
+            <div class="spread-image">
+
+                <img
+                    id="spreadImage"
+                    src="assets/live-shows.jpg"
+                    alt=""
+                >
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT PAGE -->
+
+        <div class="book-page right-page">
+
+            <div class="spread-content">
+
+                <div class="archive-meta">
+
+                    <span id="archiveDate">
+                        NOVEMBER 2028
+                    </span>
+
+                    <span id="archiveNumber">
+                        ARCHIVE-048
+                    </span>
+
+                </div>
+
+                <h2 id="spreadTitle">
+                    Live Shows
+                </h2>
+
+                <p id="spreadCaption">
+                    The audience stopped being an audience.
+                </p>
+
+                <button
+                    class="expand-button"
+                    id="expandArchive"
+                >
+                    Open Archive
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ARCHIVE PANEL -->
+
+<aside
+    id="archivePanel"
+    class="archive-panel"
+>
+
+    <button
+        id="closeArchive"
+        class="close-panel"
+    >
+        ×
+    </button>
+
+    <div class="archive-scroll">
+
+        <div class="archive-header">
+
+            <div class="archive-tag">
+                ARCHIVE ENTRY
+            </div>
+
+            <h2 id="panelTitle">
+                Live Shows
+            </h2>
+
+        </div>
+
+        <section class="archive-block">
+
+            <h3>
+                Why
+            </h3>
+
+            <p id="panelWhy">
+                Placeholder.
+            </p>
+
+        </section>
+
+        <section class="archive-block">
+
+            <h3>
+                Format
+            </h3>
+
+            <p id="panelHow">
+                Placeholder.
+            </p>
+
+        </section>
+
+        <section class="archive-block">
+
+            <h3>
+                Future
+            </h3>
+
+            <p id="panelFuture">
+                Placeholder.
+            </p>
+
+        </section>
+
+        <section class="archive-block">
+
+            <h3>
+                Notes
+            </h3>
+
+            <div id="panelNotes">
+
+            </div>
+
+        </section>
+
+    </div>
+
+</aside>
+
+<!-- DATA -->
+
+<script src="data.js"></script>
+
+<!-- ENGINE -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
