@@ -6,7 +6,7 @@
 <title>SOSH Archive 2030</title>
 <!--
 Place this HTML in the same folder as:
-dark.png, Book.png, live.png, microphone.png, night.png, communal.png, workshop.png, ticket.png,
+dark.png, Book.png, logo.png, live.png, microphone.png, night.png, communal.png, workshop.png, ticket.png,
 handwritten.png, poloroids.png, bali.png, japan.png, philippines.png, voicemail.png,
 partnership.png, page-turn.mp4, voicemail.mp4.
 -->
@@ -396,7 +396,7 @@ h1,h2,h3,p{margin:0}
 .foldout-open .book{width:min(1180px,100%);}
 .foldout-open .right-page{overflow:visible}
 .foldout-panel{
-  position:absolute;left:16px;right:-170px;top:58px;height:450px;z-index:8;
+  position:absolute;left:16px;right:-170px;top:58px;height:470px;z-index:8;
   background:
     linear-gradient(180deg,rgba(234,215,168,.9),rgba(210,188,142,.9)),
     url("handwritten.png") center/cover no-repeat,#e6d0a1;
@@ -404,7 +404,7 @@ h1,h2,h3,p{margin:0}
   box-shadow:0 25px 45px rgba(0,0,0,.28);
   transform-origin:left center;
   animation:unfold 1s cubic-bezier(.2,.74,.18,1) both;
-  padding:38px;
+  padding:44px;
 }
 @keyframes unfold{from{transform:scaleX(.18);opacity:.3}to{transform:scaleX(1);opacity:1}}
 .roadmap{
@@ -477,6 +477,54 @@ h1,h2,h3,p{margin:0}
   opacity:1 !important;
 }
 
+
+.logo-hole img{
+  max-width:86%;
+  max-height:78%;
+  object-fit:contain;
+  display:block;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.35));
+}
+
+
+.blank-flip-page{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(76,48,20,.18),rgba(255,247,218,.24) 10%,rgba(255,247,218,.12) 86%,rgba(76,48,20,.16)),
+    radial-gradient(circle at 12% 18%, rgba(116,83,42,.055) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 72% 32%, rgba(116,83,42,.04) 0 1px, transparent 1.4px),
+    repeating-linear-gradient(0deg, rgba(96,63,29,.03) 0 1px, transparent 1px 5px),
+    linear-gradient(135deg, #f8e9c3 0%, #efd9aa 47%, #e2c58d 100%);
+  background-blend-mode:multiply,normal,normal,normal,normal;
+  opacity:1;
+}
+.blank-fiber{
+  position:absolute;
+  inset:0;
+  background:
+    repeating-linear-gradient(90deg, rgba(80,52,24,.018) 0 1px, transparent 1px 6px),
+    radial-gradient(circle at 42% 44%, rgba(75,48,20,.035) 0 1px, transparent 1.5px);
+  mix-blend-mode:multiply;
+  opacity:.7;
+}
+.text-only-card{
+  height:100%;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:18px;
+  background:
+    linear-gradient(135deg,#f7e6bd,#e7c993);
+  color:#5c432c;
+  font:900 10px/1.5 var(--mono);
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  border:1px solid rgba(95,62,27,.16);
+}
+
 </style>
 </head>
 
@@ -500,7 +548,7 @@ h1,h2,h3,p{margin:0}
 
     <section class="book-area">
       <div class="cover" id="cover">
-        <div class="logo-hole">Logo Here</div>
+        <div class="logo-hole"><img src="logo.png" alt="SOSH logo"></div>
         <div class="cover-title">
           <div class="sosh">SOSH</div>
           <div class="archive">ARCHIVE</div>
@@ -583,7 +631,7 @@ right:`<div class="photo polaroid" style="height:360px;margin-top:18px;transform
 {
 chapter:"social",
 note:{kicker:"Social / Live Shows",title:"Live Shows",body:"A live show lets Sosh turn followers into participants. It is not stand-up, not a panel and not a Q&A. It is a public version of a private conversation that the room is invited to enter.",a:"Creator audiences want to hear the unfiltered thoughts behind the content. Live shows deepen that relationship and turn passive viewing into shared presence.",b:"First half: Saksham and Adil talk through a topic with real stakes. Second half: selected people from the room come into the conversation because they have something meaningful to add.",more:"The business impact is strong because one live show creates ticket revenue, clips for short form, long-form discussion, audience research, community trust and demand for future city events. It makes the audience feel like they helped shape the night."},
-left:`<div class="kicker">Live Shows</div><span class="date-stamp">November 2028</span><div class="photo polaroid" style="height:385px;margin-top:26px;transform:rotate(-1.2deg)"><img src="live.png"><div class="label">Live Show Room</div></div><span class="page-num">005</span>`,
+left:`<div class="kicker">Live Shows</div><span class="date-stamp">November 2028</span><div class="photo polaroid" style="height:385px;margin-top:26px;transform:rotate(-1.2deg)"><div class="text-only-card">LIVE<br>archive note</div><div class="label">Live Show Room</div></div><span class="page-num">005</span>`,
 right:`<div style="height:100%;display:flex;flex-direction:column;justify-content:center"><p class="caption-hand">The audience stopped being an audience.</p><div class="rule"></div><div class="grid2"><div class="paper-chip">Microphone<span>One room. One conversation.</span></div><div class="paper-chip">Question cards<span>Not Q&A. Contributions.</span></div><div class="paper-chip">Ticket stub<span>Admit one, but leave as part of the room.</span></div><div class="paper-chip">Soundcheck note<span>Topic with genuine stakes.</span></div></div></div><span class="page-num">006</span>`
 },
 {
@@ -601,26 +649,26 @@ right:`<div class="photo polaroid" style="height:380px;transform:rotate(-1.6deg)
 {
 chapter:"social",
 note:{kicker:"Social / Long Form",title:"Long Form",body:"Long form is where Sosh builds trust. The topics Sosh already owns — dating, adulthood, loneliness, friendship, food, taste, city life — need more room than a two-minute clip.",a:"People crave the true unfiltered friendship between the founders. Long form lets the audience stay long enough to trust the taste and thinking behind the recommendations.",b:"Use podcasts, essays, annotated transcripts, behind-the-scenes dinners, trying new food in new cities and city diaries. Clip every long-form piece into short-form distribution.",more:"The flywheel: long form creates depth, short form distributes it, live shows make it participatory, and events convert that trust into real-world community."},
-left:`<div class="kicker">Long Form</div><div class="photo" style="height:395px;transform:rotate(.8deg)"><span class="tape"></span><img src="handwritten.png"></div><span class="page-num">011</span>`,
+left:`<div class="kicker">Long Form</div><div class="photo" style="height:395px;transform:rotate(.8deg)"><span class="tape"></span><div class="text-only-card">HANDWRITTEN<br>archive note</div></div><span class="page-num">011</span>`,
 right:`<div style="height:100%;display:flex;flex-direction:column;justify-content:center"><p class="caption-hand">Attention became trust.</p><div class="rule"></div><div class="paper-chip">Annotated transcript<span>What people highlighted became future episodes.</span></div><div class="paper-chip" style="margin-top:14px">Podcast clipping system<span>One long conversation, many social assets.</span></div></div><span class="page-num">012</span>`
 },
 {
 chapter:"social",
 note:{kicker:"Social / Creator Conversations",title:"Creator Conversations + Audience Participation",body:"Sosh can host conversations with creators, chefs, founders, artists, therapists, athletes and city people who share its obsession with connection and taste.",a:"This expands authority without making the brand feel corporate. Guests become doorways into new audiences and new communities.",b:"Tie each creator conversation to a real experience: a dinner, a walk, a workshop, a radio episode, a live show segment or a city guide. Audience members should contribute, not just ask questions.",more:"The long-term play is a Sosh conversation network — not influencer marketing, but a curated ecosystem of people who make life in a city feel more alive."},
 left:`<div class="kicker">Creator Conversations</div><h2 class="title">The city had more voices than one.</h2><p class="copy" style="margin-top:18px">Conversations with people who understand food, friendship, work, creativity, loneliness, wellness and city life.</p><div class="rule"></div><div class="paper-chip">Guest note<span>Creators as community bridges.</span></div><span class="page-num">013</span>`,
-right:`<div class="grid2" style="margin-top:28px"><div class="photo" style="height:215px"><img src="microphone.png"></div><div class="photo" style="height:215px;transform:rotate(1.4deg)"><img src="communal.png"></div></div><p class="caption-hand" style="margin-top:40px">The conversation kept making rooms.</p><span class="page-num">014</span>`
+right:`<div class="grid2" style="margin-top:28px"><div class="photo" style="height:215px"><div class="text-only-card">MICROPHONE<br>archive note</div></div><div class="photo" style="height:215px;transform:rotate(1.4deg)"><img src="communal.png"></div></div><p class="caption-hand" style="margin-top:40px">The conversation kept making rooms.</p><span class="page-num">014</span>`
 },
 {
 chapter:"events",
 note:{kicker:"Chapter 2 / Events",title:"Friendship through experiences",body:"Events are the physical infrastructure of Sosh. They turn taste and attention into rooms where people can actually meet, talk, return and remember.",a:"The audience is urban and allergic to anything try-hard. The events must feel designed, but not forced; hosted, but not performative.",b:"The event system has Discovery Events, Workshop Nights, Food Experiences, Sports With A Twist and City Walks. Each one solves a different kind of social entry point.",more:"The pitch is not to host random events. It is to build a progression funnel: accessible first rooms, deeper second rooms and premium micro experiences for the most invested members."},
 left:`<div class="kicker">Chapter 2</div><h1 class="title-xl">Events</h1><p class="copy">Friendship through experiences.</p><div class="rule"></div><div class="paper-chip">Recovered material<span>Tickets · event photos · guest lists · maps · notes · name tags</span></div><span class="page-num">017</span>`,
-right:`<div class="photo polaroid" style="height:385px;transform:rotate(1.1deg)"><span class="tape"></span><img src="communal.png"><div class="label">Communal Dinner Gathering</div></div><p class="caption-hand" style="margin-top:24px">14,209 introductions.</p><span class="page-num">018</span>`
+right:`<div class="photo polaroid" style="height:385px;transform:rotate(1.1deg)"><span class="tape"></span><div class="text-only-card">COMMUNAL<br>archive note</div><div class="label">Communal Dinner Gathering</div></div><p class="caption-hand" style="margin-top:24px">14,209 introductions.</p><span class="page-num">018</span>`
 },
 {
 chapter:"events",
 note:{kicker:"Events / Discovery",title:"Discovery Events",body:"Discovery Events are accessible, affordable, low-commitment and shareable. They are the easiest way for someone to enter Sosh without feeling like they are joining a club too early.",a:"They solve the first-meeting problem. A person can arrive alone and still have a structure that gives them something to do and talk about.",b:"30–35 people. Activity-led. High-energy. Designed around food, drinks, workshops, city walks, themed rooms and social games that do not feel childish.",more:"A waitlist system can create demand, while repeatable formats allow scale. These events feed content, membership, partnerships and referrals."},
 left:`<div class="kicker">Discovery Events</div><h2 class="title">The first room was easy to enter.</h2><div class="rule"></div><div class="grid2"><div class="paper-chip">30–35 people<span>Enough energy, not too anonymous.</span></div><div class="paper-chip">Activity-led<span>No awkward standing around.</span></div><div class="paper-chip">Affordable<span>Low commitment entry.</span></div><div class="paper-chip">Shareable<span>Designed to travel online.</span></div></div><span class="page-num">019</span>`,
-right:`<div class="photo" style="height:215px;transform:rotate(-1.2deg)"><img src="ticket.png"></div><div class="photo" style="height:215px;margin-top:18px;transform:rotate(1deg)"><img src="ticket.png"></div><span class="page-num">020</span>`
+right:`<div class="photo" style="height:215px;transform:rotate(-1.2deg)"><img src="ticket.png"></div><div class="photo" style="height:215px;margin-top:18px;transform:rotate(1deg)"><div class="text-only-card">TICKET<br>archive note</div></div><span class="page-num">020</span>`
 },
 {
 chapter:"events",
@@ -632,13 +680,13 @@ right:`<div style="height:100%;display:flex;flex-direction:column;justify-conten
 chapter:"events",
 note:{kicker:"Events / Food Experiences",title:"Food Experiences",body:"Food is Sosh’s natural social technology. It gives people a shared table, a pacing structure and a reason to stay longer than they planned.",a:"Food lowers social friction. People remember who they sat beside, what they ordered, what was shared and what conversation happened between courses.",b:"Formats can include build-your-signature drink, BYO last meal, dinner with question jenga, neighbourhood tasting routes and chef-led tables.",more:"Food experiences can become the backbone of partnerships with restaurants, cafés, coffee roasters and hotels. They can also become Sosh city guides and content series."},
 left:`<div class="kicker">Food Experiences</div><h2 class="title">The table did half the hosting.</h2><p class="copy" style="margin-top:18px">Dinners, tasting routes, last meals, shared courses and meals that gave people a reason to linger.</p><span class="page-num">023</span>`,
-right:`<div class="photo polaroid" style="height:390px;transform:rotate(.9deg)"><img src="communal.png"><div class="label">Dinner Experiments / Food Experiences</div></div><span class="page-num">024</span>`
+right:`<div class="photo polaroid" style="height:390px;transform:rotate(.9deg)"><div class="text-only-card">COMMUNAL<br>archive note</div><div class="label">Dinner Experiments / Food Experiences</div></div><span class="page-num">024</span>`
 },
 {
 chapter:"events",
 note:{kicker:"Events / Movement",title:"Sports With A Twist + City Walks",body:"Not every Sosh experience should be seated. Movement creates a lighter social mood and lets people meet without the pressure of constant eye contact.",a:"Sports and walks give structure to casual connection. They are easy to repeat, easy to theme and easy to document.",b:"Sports with a twist can include playful leagues, low-skill tournaments, social scoring or post-game meals. City Walks can include cafés, architecture, bookstores, sunrise points and neighbourhood stories.",more:"These formats help Sosh expand across cities because each city already has parks, streets, food spots and local routes. Sosh’s role is curation, hosting and memory design."},
 left:`<div class="kicker">Sports With A Twist</div><h2 class="title">The game was never only the game.</h2><div class="rule"></div><div class="paper-chip">Scorecard<span>Social scoring, inside jokes, team rituals.</span></div><div class="paper-chip" style="margin-top:14px">Post-game table<span>Movement turns into conversation.</span></div><span class="page-num">025</span>`,
-right:`<div class="kicker">City Walks</div><div class="photo" style="height:300px;transform:rotate(-1.2deg)"><span class="tape"></span><img src="ticket.png"></div><p class="caption-hand" style="margin-top:28px">The city became easier to enter.</p><span class="page-num">026</span>`
+right:`<div class="kicker">City Walks</div><div class="photo" style="height:300px;transform:rotate(-1.2deg)"><span class="tape"></span><div class="text-only-card">TICKET<br>archive note</div></div><p class="caption-hand" style="margin-top:28px">The city became easier to enter.</p><span class="page-num">026</span>`
 },
 {
 chapter:"insider",
@@ -649,43 +697,43 @@ right:`<div class="photo polaroid" style="height:380px;transform:rotate(-.8deg)"
 {
 chapter:"insider",
 note:{kicker:"Inside / Archive Night",title:"Archive Night",body:"Archive Night asks members to bring objects, photos, voice notes, messages or memories from their lives. The room becomes a living scrapbook.",a:"It gives people a way to share without performing. Objects carry stories better than introductions do.",b:"The host curates prompts around memory: a place you miss, a message you never deleted, a food tied to someone, a photo that still feels alive.",more:"This can feed the annual Sosh Book, future exhibitions, member spotlights and community rituals. It also perfectly mirrors the website concept itself."},
-left:`<div class="kicker">Archive Night</div><div class="photo polaroid" style="height:390px;transform:rotate(1deg)"><img src="poloroids.png"><div class="label">Old photographs / printed memories / voice notes</div></div><span class="page-num">029</span>`,
+left:`<div class="kicker">Archive Night</div><div class="photo polaroid" style="height:390px;transform:rotate(1deg)"><div class="text-only-card">POLOROIDS<br>archive note</div><div class="label">Old photographs / printed memories / voice notes</div></div><span class="page-num">029</span>`,
 right:`<div style="height:100%;display:flex;flex-direction:column;justify-content:center"><p class="caption-hand">Everyone brought something they had kept.</p><div class="rule"></div><div class="paper-chip">Object prompt<span>A memory you can hold.</span></div></div><span class="page-num">030</span>`
 },
 {
 chapter:"insider",
 note:{kicker:"Inside / Grief Table",title:"Grief Table",body:"Grief Table is a carefully hosted dinner for conversations about loss, change, endings and adulthood. It must be held with sensitivity and strong facilitation.",a:"Community is not only built through fun. Deeper meaning often forms when people feel safe enough to be honest.",b:"Small group, clear consent, careful prompts, no forced vulnerability, beautiful food, and a trained host or partner where needed.",more:"This format should be rare and protected. If done well, it becomes one of the most meaningful Sosh rooms — not for content, but for trust."},
 left:`<div class="kicker">Grief Table</div><h2 class="title">Some rooms were quieter.</h2><p class="copy" style="margin-top:18px">Folded letters. Pressed flowers. Menus with almost no decoration.</p><span class="page-num">031</span>`,
-right:`<div class="photo" style="height:310px;margin-top:32px;transform:rotate(-1.4deg)"><span class="tape"></span><img src="handwritten.png"></div><p class="caption-hand" style="margin-top:28px">Nothing needed to be performed.</p><span class="page-num">032</span>`
+right:`<div class="photo" style="height:310px;margin-top:32px;transform:rotate(-1.4deg)"><span class="tape"></span><div class="text-only-card">HANDWRITTEN<br>archive note</div></div><p class="caption-hand" style="margin-top:28px">Nothing needed to be performed.</p><span class="page-num">032</span>`
 },
 {
 chapter:"insider",
 note:{kicker:"Inside / BYO Last Meal",title:"BYO Last Meal",body:"Each person brings or chooses a dish connected to memory: home food, a breakup meal, a childhood snack, a family recipe or something they would eat if it were their last meal.",a:"Food gives vulnerability a shape. People can tell a story through a dish instead of introducing themselves abstractly.",b:"The evening can include recipe cards, family photographs, handwritten notes and a shared table where every course belongs to someone.",more:"This format has powerful content potential without feeling extractive: recipe zines, anonymous memory cards, annual meal archive and partner restaurant editions."},
-left:`<div class="kicker">BYO Last Meal</div><div class="photo polaroid" style="height:375px;transform:rotate(.8deg)"><img src="communal.png"><div class="label">Recipe cards / family photos / dinner table</div></div><span class="page-num">033</span>`,
+left:`<div class="kicker">BYO Last Meal</div><div class="photo polaroid" style="height:375px;transform:rotate(.8deg)"><div class="text-only-card">COMMUNAL<br>archive note</div><div class="label">Recipe cards / family photos / dinner table</div></div><span class="page-num">033</span>`,
 right:`<div style="height:100%;display:flex;flex-direction:column;justify-content:center"><p class="caption-hand">The dish explained what the person didn’t say first.</p><div class="rule"></div><div class="paper-chip">Recipe card<span>Memory served as a course.</span></div></div><span class="page-num">034</span>`
 },
 {
 chapter:"insider",
 note:{kicker:"Inside / Social Rituals",title:"House Party, Sunday Club, Dinner Experiments",body:"These recurring formats make Sosh feel less like ticketed events and more like a rhythm in people’s lives.",a:"Meaning grows through repeated rituals. People need dependable rooms, not just special occasions.",b:"House Party feels hosted but informal. Sunday Club creates gentle weekend continuity. Dinner Experiments test unusual formats and prompts.",more:"These can become monthly membership anchors, making Sosh part of routine rather than one-off entertainment."},
 left:`<div class="kicker">House Party</div><h2 class="title">Not the conventional one.</h2><div class="rule"></div><div class="paper-chip">Living room rules<span>No loud networking. No forced games. Just hosted ease.</span></div><div class="paper-chip" style="margin-top:14px">Sunday Club<span>A recurring room for people who want to return.</span></div><span class="page-num">035</span>`,
-right:`<div class="photo polaroid" style="height:380px;transform:rotate(-1deg)"><span class="tape"></span><img src="communal.png"><div class="label">Dinner Experiments / Sunday Club</div></div><span class="page-num">036</span>`
+right:`<div class="photo polaroid" style="height:380px;transform:rotate(-1deg)"><span class="tape"></span><div class="text-only-card">COMMUNAL<br>archive note</div><div class="label">Dinner Experiments / Sunday Club</div></div><span class="page-num">036</span>`
 },
 {
 chapter:"membership",
 note:{kicker:"Chapter 4 / Membership Evolution",title:"Not loyalty. Identity.",body:"Sosh membership should not feel like a points program. It should feel like a person’s relationship with the world becoming deeper over time.",a:"The system rewards loyalty with intimacy. More return means smaller rooms, better matching, deeper access and more ability to shape the story.",b:"Curious begins after the first event. Insider begins after repeated return. Original begins when members become contributors and hosts.",more:"This gives Sosh a scalable structure without becoming cold. It also creates status that does not feel cringe because it is based on participation and contribution."},
 left:`<div class="kicker">Chapter 4</div><h1 class="title-xl">Membership Evolution</h1><p class="copy">Not loyalty. Identity.</p><div class="rule"></div><div class="paper-chip">Progression<span>Curious → Insider → Original</span></div><span class="page-num">037</span>`,
-right:`<div class="photo" style="height:330px;margin-top:20px;transform:rotate(.7deg)"><span class="tape"></span><img src="ticket.png"></div><p class="caption-hand" style="margin-top:28px">The first yes. The first return. Helped shape the story.</p><span class="page-num">038</span>`
+right:`<div class="photo" style="height:330px;margin-top:20px;transform:rotate(.7deg)"><span class="tape"></span><div class="text-only-card">TICKET<br>archive note</div></div><p class="caption-hand" style="margin-top:28px">The first yes. The first return. Helped shape the story.</p><span class="page-num">038</span>`
 },
 {
 chapter:"membership",
 note:{kicker:"Membership / Three Identities",title:"Curious, Insider, Original",body:"Each level represents a deeper relationship with Sosh. The language should feel warm and identity-led, not transactional.",a:"Curious means the person has entered. Insider means they have returned. Original means they have helped shape the community.",b:"Curious unlocks waitlists and recommendations. Insider unlocks intimate events and priority matching. Original unlocks micro experiences, annual trips and host opportunities.",more:"This becomes especially powerful during city expansion. Originals can help seed Hyderabad, Pune and other cities as trusted community anchors."},
 left:`<div class="kicker">Curious</div><h2 class="title">The first yes.</h2><div class="rule"></div><div class="paper-chip">Artifacts<span>First ticket · first wristband · welcome note</span></div><div class="paper-chip" style="margin-top:14px">Access<span>Community group · event waitlists · weekly city recommendations</span></div><span class="page-num">039</span>`,
-right:`<div class="kicker">Insider / Original</div><div class="paper-chip">Insider<span>Dinner photos · member notes · event invites · the first return</span></div><div class="paper-chip" style="margin-top:14px">Original<span>Planning notes · host invitations · community blueprints · helped shape the story</span></div><div class="photo" style="height:190px;margin-top:24px;transform:rotate(-1deg)"><img src="ticket.png"></div><span class="page-num">040</span>`
+right:`<div class="kicker">Insider / Original</div><div class="paper-chip">Insider<span>Dinner photos · member notes · event invites · the first return</span></div><div class="paper-chip" style="margin-top:14px">Original<span>Planning notes · host invitations · community blueprints · helped shape the story</span></div><div class="photo" style="height:190px;margin-top:24px;transform:rotate(-1deg)"><div class="text-only-card">TICKET<br>archive note</div></div><span class="page-num">040</span>`
 },
 {
 chapter:"membership",
 note:{kicker:"Membership / Rituals",title:"Membership Rituals",body:"Membership needs physical and emotional proof. The strongest markers are not loud merch but small objects people keep.",a:"Sosh’s audience is allergic to anything try-hard. The objects should feel like personal archive materials, not branded giveaways.",b:"Use welcome notes, wristbands, annual books, priority invites, reserved seat cards, city guides, small badges and handwritten founder notes.",more:"The best membership objects feel like they belong in a drawer years later. That is why the archive aesthetic is not just design; it is part of the membership strategy."},
-left:`<div class="kicker">Member Objects</div><div class="photo polaroid" style="height:380px;transform:rotate(-1.3deg)"><span class="tape"></span><img src="ticket.png"><div class="label">Name tags & wristbands</div></div><span class="page-num">041</span>`,
+left:`<div class="kicker">Member Objects</div><div class="photo polaroid" style="height:380px;transform:rotate(-1.3deg)"><span class="tape"></span><div class="text-only-card">TICKET<br>archive note</div><div class="label">Name tags & wristbands</div></div><span class="page-num">041</span>`,
 right:`<div style="height:100%;display:flex;flex-direction:column;justify-content:center"><p class="caption-hand">The merch couldn’t look like merch.</p><div class="rule"></div><div class="paper-chip">Physical proof<span>Objects that say: I was there.</span></div></div><span class="page-num">042</span>`
 },
 {
@@ -697,7 +745,7 @@ right:`<div class="photo polaroid" style="height:385px;transform:rotate(-1deg)">
 {
 chapter:"signature",
 note:{kicker:"Signature / Bali Residency",title:"Bali Residency",body:"Bali is the flagship residency: a week of villa living, hosted meals, creative workshops, local rituals, downtime and carefully designed connection.",a:"It is aspirational without feeling flashy. The value is who is in the house, how the days are held and what memories people leave with.",b:"12 people, 7 days, May 2026. Villa photos, passport stamps, boarding passes, polaroids, scuba-diving notes, no-phone rituals and a map. The spread should say almost nothing because the image does the work.",more:"The business model can include premium ticketing, partner villas, scuba partners, no-phone rituals, creator-led sessions, annual travel eligibility for Originals and content that becomes the most desirable part of the Sosh universe."},
-left:`<div class="kicker">Bali Residency</div><span class="date-stamp">12 people · 7 days · May 2026</span><div class="photo polaroid" style="height:390px;margin-top:24px;transform:rotate(.7deg)"><img src="bali.png"><div class="label">Villa photos / passport stamps / boarding pass / scuba notes / no phones</div></div><span class="page-num">045</span>`,
+left:`<div class="kicker">Bali Residency</div><span class="date-stamp">12 people · 7 days · May 2026</span><div class="photo polaroid" style="height:390px;margin-top:24px;transform:rotate(.7deg)"><div class="text-only-card">BALI<br>archive note</div><div class="label">Villa photos / passport stamps / boarding pass / scuba notes / no phones</div></div><span class="page-num">045</span>`,
 right:`<div style="height:100%;display:flex;flex-direction:column;justify-content:center"><p class="caption-hand">12 people.<br>7 days.<br>May 2026.</p><div class="rule"></div><div class="paper-chip">Field note<span>Day 4. No phones. Scuba at 7am. Nobody wanted to leave.</span></div></div><span class="page-num">046</span>`
 },
 {
@@ -716,24 +764,24 @@ right:`<div style="height:100%;display:flex;flex-direction:column;justify-conten
 chapter:"signature",
 note:{kicker:"Signature / Lisbon + Sosh Houses",title:"Lisbon Creative Month + Sosh Houses",body:"Lisbon Creative Month and Sosh Houses expand Sosh from events into temporary living and creative residency models.",a:"A month-long format gives members enough time to form routines, collaborations and friendships that cannot happen in one evening.",b:"Sosh Houses can become city-based residences: part guesthouse, part community salon, part programming space.",more:"This is a long-term brand play. It turns Sosh into a lifestyle ecosystem without becoming a generic hospitality company."},
 left:`<div class="kicker">Lisbon Creative Month</div><h2 class="title">Some cities asked people to stay longer.</h2><p class="copy" style="margin-top:18px">Café tables, tram tickets, sketchbooks, postcards and month-long routines.</p><span class="page-num">051</span>`,
-right:`<div class="kicker">Sosh Houses</div><div class="photo" style="height:310px;margin-top:22px;transform:rotate(-1.1deg)"><span class="tape"></span><img src="ticket.png"></div><p class="caption-hand" style="margin-top:24px">A room became a ritual.</p><span class="page-num">052</span>`
+right:`<div class="kicker">Sosh Houses</div><div class="photo" style="height:310px;margin-top:22px;transform:rotate(-1.1deg)"><span class="tape"></span><div class="text-only-card">TICKET<br>archive note</div></div><p class="caption-hand" style="margin-top:24px">A room became a ritual.</p><span class="page-num">052</span>`
 },
 {
 chapter:"signature",
 note:{kicker:"Signature / Retreats + Expeditions",title:"Desert Retreats, Founder Trips, Learning Expeditions",body:"These formats let Sosh serve different member intentions: rest, access, growth, taste and learning.",a:"They make the community feel expansive. Not every trip has to be leisure; some can be built around learning, building, reflection or creative output.",b:"Founder Trips offer intimacy with Saksham and Adil. Learning Expeditions bring experts into the field. Desert Retreats create quiet and reset.",more:"This adds depth to the premium tier and gives Originals something to aspire to beyond events."},
 left:`<div class="kicker">Desert Retreats</div><h2 class="title">Silence became part of the design.</h2><div class="rule"></div><div class="paper-chip">Founder Trips<span>Small-group travel with the people behind the world.</span></div><div class="paper-chip" style="margin-top:14px">Learning Expeditions<span>Travel with a subject, a guide and a group.</span></div><span class="page-num">053</span>`,
-right:`<div class="photo polaroid" style="height:355px;transform:rotate(.8deg)"><img src="bali.png"><div class="label">Signature experience field notes</div></div><span class="page-num">054</span>`
+right:`<div class="photo polaroid" style="height:355px;transform:rotate(.8deg)"><div class="text-only-card">BALI<br>archive note</div><div class="label">Signature experience field notes</div></div><span class="page-num">054</span>`
 },
 {
 chapter:"between",
 note:{kicker:"Chapter 6 / Between Moments",title:"Community building outside events",body:"The Between Moments layer is the invisible infrastructure that makes people feel remembered even when there is no event happening.",a:"Most communities lose energy between gatherings. Sosh can own the in-between: letters, voicemails, annual books, postcards, reservations, introductions and birthday calls.",b:"These moments should feel quiet and personal, not automated. The goal is to extend the emotional life of belonging.",more:"This is where retention becomes emotional. The person does not only remember Sosh when they see an event poster; Sosh appears in their mailbox, phone, calendar and city."},
 left:`<div class="kicker">Chapter 6</div><h1 class="title-xl">Between Moments</h1><p class="copy">Community building outside events. The invisible layer.</p><div class="rule"></div><div class="paper-chip">Formats<span>Future Letters · Voicemail · Annual Book · Postcards · Standing Reservations · City Introductions · Birthday Calls</span></div><span class="page-num">055</span>`,
-right:`<div class="photo polaroid" style="height:385px;transform:rotate(-1deg)"><span class="tape"></span><img src="handwritten.png"><div class="label">Envelope & Postcard Set</div></div><span class="page-num">056</span>`
+right:`<div class="photo polaroid" style="height:385px;transform:rotate(-1deg)"><span class="tape"></span><div class="text-only-card">HANDWRITTEN<br>archive note</div><div class="label">Envelope & Postcard Set</div></div><span class="page-num">056</span>`
 },
 {
 chapter:"between",
 note:{kicker:"Between / Future Letters",title:"Future Letters",body:"Members write a letter to themselves during an experience. Sosh mails it back months later, exactly when the memory would have faded.",a:"It creates a relationship with the brand that continues after the event. The memory arrives physically, not as a notification.",b:"Envelope, wax seal, postmark, date stamp and a quiet caption: some arrived exactly when they were needed.",more:"Future evolution can include postcards from strangers, voice letters, annual memory capsules, and city-specific letter drops. It is emotional retention disguised as correspondence."},
-left:`<div class="kicker">Future Letters</div><div class="photo polaroid" style="height:390px;transform:rotate(.8deg)"><img src="handwritten.png"><div class="label">Envelope / wax seal / postmark</div></div><span class="page-num">057</span>`,
+left:`<div class="kicker">Future Letters</div><div class="photo polaroid" style="height:390px;transform:rotate(.8deg)"><div class="text-only-card">HANDWRITTEN<br>archive note</div><div class="label">Envelope / wax seal / postmark</div></div><span class="page-num">057</span>`,
 right:`<div style="height:100%;display:flex;flex-direction:column;justify-content:center"><p class="caption-hand">Some arrived exactly when they were needed.</p><div class="rule"></div><div class="paper-chip">Postmark<span>Three months later, the night returned.</span></div></div><span class="page-num">058</span>`
 },
 {
@@ -752,13 +800,13 @@ right:`<div class="kicker">Voicemail 003 / Tap to play</div>
 {
 chapter:"between",
 note:{kicker:"Between / Annual Book",title:"The Annual Sosh Book",body:"A printed living document updated annually with photos, confessions, memories and moments from that year. Printed in small numbers only for people who were actually there.",a:"Owning it means you were part of something real. It creates belonging through scarcity and memory, not hype.",b:"Each year’s book can include event photographs, anonymous notes, host letters, city pages, member stories and artifacts from the year.",more:"This is one of the strongest ideas because it turns community into a collectible object. It also makes the archive website feel like a preview of a real future artifact."},
-left:`<div class="kicker">Annual Book</div><div class="photo polaroid" style="height:385px;transform:rotate(1deg)"><img src="poloroids.png"><div class="label">Photos / confessions / memories / moments</div></div><span class="page-num">061</span>`,
+left:`<div class="kicker">Annual Book</div><div class="photo polaroid" style="height:385px;transform:rotate(1deg)"><div class="text-only-card">POLOROIDS<br>archive note</div><div class="label">Photos / confessions / memories / moments</div></div><span class="page-num">061</span>`,
 right:`<div style="height:100%;display:flex;flex-direction:column;justify-content:center"><p class="caption-hand">Owning it meant you were there.</p><div class="rule"></div><div class="paper-chip">Small print run<span>Not merch. Proof of belonging.</span></div></div><span class="page-num">062</span>`
 },
 {
 chapter:"between",
 note:{kicker:"Between / Postcards + Reservations",title:"Postcards, Standing Reservations, City Introductions, Birthday Calls",body:"This is the quiet operating system of belonging: small gestures that make people feel expected, remembered and connected.",a:"A person returns when the community feels alive even outside the calendar. These gestures keep the relationship warm.",b:"Standing reservations for loyal members: the table is already booked; you just show up. City introductions connect members across places. Birthday calls make the brand feel human.",more:"Together, these rituals build retention loops that are emotional rather than transactional. They are cheaper than large events but often more memorable."},
-left:`<div class="kicker">Postcards</div><div class="photo" style="height:300px;margin-top:20px;transform:rotate(-1.2deg)"><span class="tape"></span><img src="handwritten.png"></div><p class="caption-hand" style="margin-top:26px">A stranger wrote back.</p><span class="page-num">063</span>`,
+left:`<div class="kicker">Postcards</div><div class="photo" style="height:300px;margin-top:20px;transform:rotate(-1.2deg)"><span class="tape"></span><div class="text-only-card">HANDWRITTEN<br>archive note</div></div><p class="caption-hand" style="margin-top:26px">A stranger wrote back.</p><span class="page-num">063</span>`,
 right:`<div class="kicker">Standing Reservations</div><h2 class="title">The table was already booked.</h2><div class="rule"></div><div class="paper-chip">City Introductions<span>Someone you should meet when you land.</span></div><div class="paper-chip" style="margin-top:14px">Birthday Calls<span>Small proof that someone remembered.</span></div><span class="page-num">064</span>`
 },
 {
@@ -770,27 +818,39 @@ right:`<div class="photo polaroid" style="height:385px;transform:rotate(-1deg)">
 {
 chapter:"partners",
 note:{kicker:"Partnerships / Coffee Shops",title:"Coffee Shops",body:"Single-origin coffee roasters are a natural partner because their audience overlaps with Sosh: people who care about taste, place, ritual and thoughtful social life.",a:"Coffee is a low-pressure social setting. It supports morning events, radio episodes, city guides, standing reservations and member rituals.",b:"Potential partner energy: Kapi Kulture, Corridor Seven, Curious Life Coffee, Black Baza Coffee — brands with story, care and specificity.",more:"The artifact is not a logo. It is a coffee bag, roast note, stamped loyalty card or receipt that makes the partnership feel lived-in."},
-left:`<div class="kicker">Coffee Shops</div><div class="photo" style="height:330px;margin-top:20px;transform:rotate(.8deg)"><span class="tape"></span><img src="partnership.png"></div><span class="page-num">067</span>`,
+left:`<div class="kicker">Coffee Shops</div><div class="photo" style="height:330px;margin-top:20px;transform:rotate(.8deg)"><span class="tape"></span><div class="text-only-card">PARTNERSHIP<br>archive note</div></div><span class="page-num">067</span>`,
 right:`<div style="height:100%;display:flex;flex-direction:column;justify-content:center"><p class="caption-hand">Their audience and ours were the same people who had not met yet.</p><div class="rule"></div><div class="paper-chip">Roast note<span>Every bag had a story.</span></div></div><span class="page-num">068</span>`
 },
 {
 chapter:"partners",
 note:{kicker:"Partnerships / City Ecosystem",title:"Hotels, Wellness Spaces, Restaurants, Creators, Local Businesses",body:"Sosh can build an ecosystem of places that make connection easier: hotels for travel, wellness spaces for reset, restaurants for tables, creators for trust and local businesses for texture.",a:"The city becomes more navigable when Sosh curates not just where to go, but how to feel there and who to go with.",b:"Partnerships should be tied to experiences: standing tables, room keys, city guides, menus, studio nights, founder dinners and local rituals.",more:"This turns Sosh into an operating layer for urban belonging. The partnership model becomes more defensible because it is built around culture, not ad inventory."},
-left:`<div class="kicker">Hotels & Spaces</div><div class="photo polaroid" style="height:375px;transform:rotate(-1deg)"><img src="ticket.png"><div class="label">Hotel Key & City Guide</div></div><span class="page-num">069</span>`,
+left:`<div class="kicker">Hotels & Spaces</div><div class="photo polaroid" style="height:375px;transform:rotate(-1deg)"><div class="text-only-card">TICKET<br>archive note</div><div class="label">Hotel Key & City Guide</div></div><span class="page-num">069</span>`,
 right:`<div class="kicker">Restaurants / Creators / Local Businesses</div><div class="paper-chip">Menus<span>Designed around conversation.</span></div><div class="paper-chip" style="margin-top:14px">Ceramics<span>Studios that make people slow down.</span></div><div class="paper-chip" style="margin-top:14px">Maps<span>The city annotated by people you trust.</span></div><span class="page-num">070</span>`
 },
 {
 chapter:"roadmap",
-note:{kicker:"Chapter 8 / Roadmap",title:"Not company roadmap. Human roadmap.",body:"The final chapter should feel cleaner and more reflective. Fewer artifacts. More space. The archive reveals the human journey underneath the whole system.",a:"This is the strategic climax. It shows that Sosh is not a collection of events but a progression from discovery to belonging.",b:"The journey: Discover → Attend → Return → Curious → Insider → Original → Travel → Host → Mentor → Belong.",more:"The roadmap should unfold like a blueprint beyond the book, wider than previous pages, as if the system was hidden inside the archive all along."},
+note:{kicker:"Chapter 8 / Roadmap",title:"Not company roadmap. Human roadmap.",body:"The final chapter should feel cleaner and more reflective. Fewer artifacts. More space. The archive reveals the simple human journey underneath the whole system.",a:"This is the strategic climax. It shows that Sosh is not a collection of events, but a path from first discovery to genuine belonging.",b:"The journey: Discover → Attend → Return → Curious → Insider → Belong.",more:"The roadmap should unfold like a blueprint beyond the book, wider than previous pages, as if the system was hidden inside the archive all along."},
 left:`<div class="kicker">Chapter 8</div><h1 class="title-xl">Roadmap</h1><p class="copy">Final chapter. Fewer artifacts. More reflection.</p><div class="rule"></div><div class="paper-chip">Human roadmap<span>Not company roadmap.</span></div><span class="page-num">071</span>`,
 right:`<div style="height:100%;display:flex;align-items:center;justify-content:center;text-align:center"><div><p class="caption-hand">What happens after community?</p><div class="rule"></div><span class="archive-label">Turn page to unfold blueprint</span></div></div><span class="page-num">072</span>`
 },
 {
 chapter:"roadmap",
 foldout:true,
-note:{kicker:"Roadmap / Belonging Blueprint",title:"The Belonging Blueprint",body:"The blueprint connects every idea in the archive into one system. Media creates discovery. Events create first memory. Membership creates deeper rooms. Travel creates aspiration. Partnerships make the world larger.",a:"The funnel is emotional: people begin curious, return because they felt something, become recognized, then eventually help host and shape the community.",b:"The journey is designed as a human path: Discover → Attend → Return → Curious → Insider → Original → Travel → Host → Mentor → Belong.",more:"This is the actual pitch: Sosh can become the infrastructure for adult belonging. Not just events, not just content, but a layered world people enter, return to, remember and eventually help build."},
+note:{kicker:"Roadmap / Belonging Blueprint",title:"The Belonging Blueprint",body:"The blueprint connects every idea in the archive into one system. Media creates discovery. Events create first memory. Membership creates deeper rooms. Travel creates aspiration. Partnerships make the world larger.",a:"The path is emotional: people discover Sosh, attend once, return because something stayed with them, become Curious, move into Insider, and eventually feel like they belong.",b:"The journey is designed as a human path, not a business funnel: Discover, Attend, Return, Curious, Insider, Belong.",more:"This is the actual pitch: Sosh can become the infrastructure for adult belonging. Not just events, not just content, but a layered world people enter, return to, remember and eventually help build."},
 left:`<div class="kicker">Foldout Blueprint</div><h2 class="title">The whole system was hidden in the margins.</h2><p class="copy" style="margin-top:18px">The book unfolds wider than before. The archive becomes a map.</p><span class="page-num">073</span>`,
-right:`<div class="foldout-panel"><div class="kicker">Human Journey / 2030</div><h2 class="title">Discover → Attend → Return → Curious → Insider → Original → Travel → Host → Mentor → Belong</h2><div class="roadmap"><div>Discover</div><div>Attend</div><div>Return</div><div>Curious</div><div>Insider</div><div>Original</div><div>Travel</div><div>Host</div><div>Mentor</div><div>Belong</div></div><div class="photo" style="height:130px;margin-top:24px;width:330px;transform:rotate(-.4deg)"><img src="handwritten.png"></div></div><span class="page-num">074</span>`
+right:`<div class="foldout-panel"><div class="kicker">Human Journey / 2030</div><h2 class="title">Discover → Attend → Return → Curious → Insider → Belong</h2><div class="clean-journey">
+  <div>Discover</div>
+  <span>↓</span>
+  <div>Attend</div>
+  <span>↓</span>
+  <div>Return</div>
+  <span>↓</span>
+  <div>Curious</div>
+  <span>↓</span>
+  <div>Insider</div>
+  <span>↓</span>
+  <div class="final">Belong</div>
+</div></div><span class="page-num">074</span>`
 },
 {
 chapter:"roadmap",
@@ -937,8 +997,8 @@ function nextPage(){
   playAudio("pageAudio","page");
   const from = spreads[current];
   const to = spreads[current + 1];
-  flipFront.innerHTML = from.right;
-  flipBack.innerHTML = to.left;
+  flipFront.innerHTML = blankFlipPage();
+  flipBack.innerHTML = blankFlipPage();
   flipSheet.className = "flip-sheet active";
   scene.classList.remove("foldout-open");
   setTimeout(()=>{
@@ -958,8 +1018,8 @@ function prevPage(){
   playAudio("pageAudio","page");
   const from = spreads[current];
   const to = spreads[current - 1];
-  flipFront.innerHTML = from.left;
-  flipBack.innerHTML = to.right;
+  flipFront.innerHTML = blankFlipPage();
+  flipBack.innerHTML = blankFlipPage();
   flipSheet.className = "flip-sheet back active";
   scene.classList.remove("foldout-open");
   setTimeout(()=>{
