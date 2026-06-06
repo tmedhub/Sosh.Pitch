@@ -118,10 +118,18 @@ body:after{
   border-radius:18px 26px 26px 18px;
 }
 .logo-hole{
-  position:absolute;top:62px;left:50%;transform:translateX(-50%);
-  width:132px;height:62px;border:1px dashed rgba(232,199,107,.55);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  color:rgba(237,212,135,.8);font:900 9px var(--mono);letter-spacing:1.8px;text-transform:uppercase;
+  position:absolute;
+  top:58px;
+  left:50%;
+  transform:translateX(-50%);
+  width:150px;
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:none;
+  border:0;
+  border-radius:0;
   z-index:2;
 }
 .cover-title{
@@ -313,7 +321,7 @@ h1,h2,h3,p{margin:0}
 
 /* Flip sheet - opaque */
 .flip-sheet{
-  position:absolute;top:0;left:50%;width:50%;height:100%;z-index:70;
+  position:absolute;top:0;left:50%;width:50%;height:100%;z-index:120;
   display:none;transform-origin:left center;transform-style:preserve-3d;pointer-events:none;
 }
 .flip-sheet.active{display:block;animation:flipForward .88s cubic-bezier(.2,.74,.18,1) forwards}
@@ -479,11 +487,11 @@ h1,h2,h3,p{margin:0}
 
 
 .logo-hole img{
-  max-width:86%;
-  max-height:78%;
+  max-width:100%;
+  max-height:100%;
   object-fit:contain;
   display:block;
-  filter:drop-shadow(0 2px 4px rgba(0,0,0,.35));
+  filter:drop-shadow(0 3px 5px rgba(0,0,0,.38));
 }
 
 
@@ -994,42 +1002,56 @@ function nextPage(){
   stopVoicemail();
   if(!opened || flipping || current >= spreads.length-1) return;
   flipping = true;
-  playAudio("pageAudio","page");
+  playPageTurn();
+
   const from = spreads[current];
   const to = spreads[current + 1];
+
+  // The visible flipping sheet is blank opaque paper, so old text/images never show through.
   flipFront.innerHTML = blankFlipPage();
   flipBack.innerHTML = blankFlipPage();
+
   flipSheet.className = "flip-sheet active";
-  scene.classList.remove("foldout-open");
+
+  // Swap the actual spread halfway through the turn, when the sheet is edge-on.
   setTimeout(()=>{
     current++;
     render();
+  }, 440);
+
+  setTimeout(()=>{
     flipSheet.className = "flip-sheet";
     flipping = false;
-    prevBtn.disabled = current === 0;
-    nextBtn.disabled = current === spreads.length - 1;
-  }, 880);
+    render();
+  }, 930);
 }
 
 function prevPage(){
   stopVoicemail();
   if(!opened || flipping || current <= 0) return;
   flipping = true;
-  playAudio("pageAudio","page");
+  playPageTurn();
+
   const from = spreads[current];
   const to = spreads[current - 1];
+
+  // The visible flipping sheet is blank opaque paper, so old text/images never show through.
   flipFront.innerHTML = blankFlipPage();
   flipBack.innerHTML = blankFlipPage();
+
   flipSheet.className = "flip-sheet back active";
-  scene.classList.remove("foldout-open");
+
+  // Swap the actual spread halfway through the turn, when the sheet is edge-on.
   setTimeout(()=>{
     current--;
     render();
+  }, 440);
+
+  setTimeout(()=>{
     flipSheet.className = "flip-sheet";
     flipping = false;
-    prevBtn.disabled = current === 0;
-    nextBtn.disabled = current === spreads.length - 1;
-  }, 880);
+    render();
+  }, 930);
 }
 
 function jumpToWithRiffle(page){
