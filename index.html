@@ -6,6 +6,12 @@
 <title>SOSH Archive 2030</title>
 <!--
 Place this HTML in the same folder as:
+dark.png, Book.png, live.png, microphone.png, night.png, communal.png, workshop.png, ticket.png,
+handwritten.png, poloroids.png, bali.png, japan.png, philippines.png, voicemail.png,
+partnership.png, page-turn.mp4, voicemail.mp4.
+-->
+<!--
+Place this HTML in the same folder as:
 dark.png, live.png, microphone.png, night.png, communal.png, workshop.png, ticket.png,
 handwritten.png, poloroids.png, bali.png, japan.png, philippines.png, voicemail.png,
 partnership.png if you have it, page-turn.mp4, voicemail.mp4.
@@ -87,16 +93,17 @@ body:after{
   border-radius:23px 34px 34px 23px;
   background:
     linear-gradient(90deg,rgba(0,0,0,.46),rgba(255,255,255,.08) 20%,rgba(0,0,0,.12) 50%,rgba(0,0,0,.36)),
-    url("dark.png") center/cover no-repeat,
-    linear-gradient(135deg,#28281f,#10110e);
+    url("Book.png") center/cover no-repeat;
   transform:rotateX(7deg) rotateZ(-1.2deg);
   transform-origin:left center;
   transform-style:preserve-3d;
   backface-visibility:hidden;
+  opacity:1;
   z-index:30;
   cursor:pointer;
   box-shadow:
-    0 46px 75px rgba(0,0,0,.72),
+    0 52px 90px rgba(0,0,0,.82),
+    0 0 0 1px rgba(255,220,150,.20),
     inset 0 0 0 1px rgba(242,209,116,.42),
     inset 0 0 0 16px rgba(0,0,0,.12);
   transition:transform .55s ease, filter .55s ease;
@@ -170,7 +177,10 @@ body:after{
     var(--paper);
   color:var(--ink);
   border:1px solid rgba(83,55,27,.24);
-  box-shadow:inset 0 0 30px rgba(72,48,23,.12);
+  box-shadow:
+    inset 0 0 42px rgba(72,48,23,.18),
+    inset 0 0 0 9999px rgba(245,224,178,.08);
+  opacity:1;
 }
 .left-page{border-radius:18px 4px 4px 18px;cursor:w-resize}
 .right-page{border-radius:4px 18px 18px 4px;cursor:e-resize}
@@ -262,7 +272,7 @@ h1,h2,h3,p{margin:0}
 
 /* Scrapbook elements */
 .photo{
-  position:relative;background:#f7ead0;padding:10px;border:1px solid rgba(86,56,25,.18);
+  position:relative;background:#f7ead0; opacity:1;padding:10px;border:1px solid rgba(86,56,25,.18);
   box-shadow:0 17px 28px rgba(55,34,16,.25);
   transform:rotate(-1.2deg);
 }
@@ -303,7 +313,7 @@ h1,h2,h3,p{margin:0}
 
 /* Flip sheet - opaque */
 .flip-sheet{
-  position:absolute;top:0;left:50%;width:50%;height:100%;z-index:25;
+  position:absolute;top:0;left:50%;width:50%;height:100%;z-index:70;
   display:none;transform-origin:left center;transform-style:preserve-3d;pointer-events:none;
 }
 .flip-sheet.active{display:block;animation:flipForward .88s cubic-bezier(.2,.74,.18,1) forwards}
@@ -313,7 +323,10 @@ h1,h2,h3,p{margin:0}
 @keyframes flipBack{from{transform:rotateY(0)}to{transform:rotateY(180deg)}}
 .face{
   position:absolute;inset:0;padding:42px 46px;overflow:hidden;
-  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
+  opacity:1;-webkit-backface-visibility:hidden;
+  transform-style:preserve-3d;
+  opacity:1;
   background:
     linear-gradient(90deg,rgba(0,0,0,.075),transparent 12%,transparent 88%,rgba(0,0,0,.08)),
     url("dark.png") center/cover no-repeat,
@@ -403,6 +416,19 @@ h1,h2,h3,p{margin:0}
 }
 
 /* Mobile */
+
+.face{
+  background:
+    linear-gradient(90deg,rgba(76,48,20,.20),rgba(255,247,218,.18) 12%,rgba(255,247,218,.10) 88%,rgba(76,48,20,.17)),
+    var(--paper-grain),
+    var(--paper) !important;
+  background-blend-mode:multiply,normal,normal;
+  opacity:1 !important;
+}
+.flip-sheet{
+  opacity:1 !important;
+}
+
 @media(max-width:1120px){
   .scene{grid-template-columns:1fr 350px;gap:12px}
   .sticky{width:330px}
@@ -431,6 +457,25 @@ h1,h2,h3,p{margin:0}
   box-shadow:0 10px 25px rgba(0,0,0,.35);
 }
 .voicemail-card:hover .play-badge{background:#7b251b;color:#fff1bd}
+
+
+/* Final paper lock: keeps page surfaces opaque cream regardless of assets */
+.page,
+.face{
+  background-color:#f1dfb8 !important;
+  background-image:
+    linear-gradient(90deg,rgba(76,48,20,.18),rgba(255,247,218,.24) 10%,rgba(255,247,218,.12) 86%,rgba(76,48,20,.16)),
+    radial-gradient(circle at 12% 18%, rgba(116,83,42,.055) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 72% 32%, rgba(116,83,42,.04) 0 1px, transparent 1.4px),
+    repeating-linear-gradient(0deg, rgba(96,63,29,.03) 0 1px, transparent 1px 5px),
+    linear-gradient(135deg, #f8e9c3 0%, #efd9aa 47%, #e2c58d 100%) !important;
+  background-blend-mode:multiply,normal,normal,normal,normal !important;
+  opacity:1 !important;
+}
+.flip-sheet,
+.flip-sheet *{
+  opacity:1 !important;
+}
 
 </style>
 </head>
@@ -527,7 +572,7 @@ const spreads = [
 chapter:"index",
 note:{kicker:"How to read this",title:"SOSH Archive 2030",body:"This archive imagines Sosh as it could be remembered in 2030: through pages, photographs, notes, tickets, rituals, trips and community objects.",a:"It lets the pitch feel discovered instead of explained. The book carries the memory; this pinned note carries the strategy.",b:"Use Next and Previous to turn pages. Click the right page to move forward, the left page to move back. Use the divider tabs to jump chapters.",more:"The structure avoids a basic pitch deck by making Sosh feel like a world that already exists. It shows how content, events, membership, travel and partnerships become one system of belonging."},
 left:`<div class="kicker">SOSH Archive 2030</div><h1 class="title-xl">Archive Index</h1><ul class="bullets"><li>A record of Sosh through the years.</li><li>Media, events, membership, travel and community rituals.</li><li>Book pages show the memory.</li><li>The pinned note explains the idea.</li><li>Click pages, use buttons, or use divider tabs.</li></ul><div class="rule"></div><p class="small">Open slowly. Read like a scrapbook.</p><span class="page-num">001</span>`,
-right:`<div class="kicker">Catalog of sections</div><div class="stack"><div class="paper-chip">Chapter 1 — Social<span>How Sosh evolved from events into media.</span></div><div class="paper-chip">Chapter 2 — Events<span>Friendship through experiences.</span></div><div class="paper-chip">Chapter 3 — Inside the Insider<span>Smaller rooms. Deeper belonging.</span></div><div class="paper-chip">Chapter 4 — Membership Evolution<span>Not loyalty. Identity.</span></div><div class="paper-chip">Chapter 5 — Signature Experiences<span>The dream chapter. Travel-heavy and memory-rich.</span></div><div class="paper-chip">Chapter 6 — Between Moments<span>The invisible layer outside events.</span></div></div><span class="page-num">002</span>`
+right:`<div class="kicker">Catalog of sections</div><div class="stack"><div class="paper-chip">Chapter 1 — Social<span>How Sosh evolved from events into media.</span></div><div class="paper-chip">Chapter 2 — Events<span>Friendship through experiences.</span></div><div class="paper-chip">Chapter 3 — Inside the Insider<span>Smaller rooms. Deeper meaning.</span></div><div class="paper-chip">Chapter 4 — Membership Evolution<span>Not loyalty. Identity.</span></div><div class="paper-chip">Chapter 5 — Signature Experiences<span>The dream chapter. Travel-heavy and memory-rich.</span></div><div class="paper-chip">Chapter 6 — Between Moments<span>The invisible layer outside events.</span></div></div><span class="page-num">002</span>`
 },
 {
 chapter:"social",
@@ -597,8 +642,8 @@ right:`<div class="kicker">City Walks</div><div class="photo" style="height:300p
 },
 {
 chapter:"insider",
-note:{kicker:"Chapter 3 / Inside the Insider",title:"Smaller rooms. Deeper belonging.",body:"Inside the Insider is where Sosh stops being an event brand and becomes a relationship. These formats are smaller, more personal and more emotionally designed.",a:"People return when they feel recognized. The Insider layer rewards return with intimacy, not discounts.",b:"Archive Night, Grief Table, BYO Last Meal, House Party, Sunday Club and Dinner Experiments are designed to feel personal, human and slightly sacred.",more:"This chapter builds retention and emotional depth. It creates the moments people tell close friends about but cannot fully explain online."},
-left:`<div class="kicker">Chapter 3</div><h1 class="title-xl">Inside the Insider</h1><p class="copy">Smaller rooms. Deeper belonging.</p><div class="rule"></div><div class="paper-chip">Tone<span>Intimate · personal · emotional · human</span></div><span class="page-num">027</span>`,
+note:{kicker:"Chapter 3 / Inside the Insider",title:"Smaller rooms. Deeper meaning.",body:"Inside the Insider is where Sosh stops being an event brand and becomes a relationship. These formats are smaller, more personal and more emotionally designed.",a:"People return when they feel recognized. The Insider layer rewards return with meaning, not discounts.",b:"Archive Night, Grief Table, BYO Last Meal, House Party, Sunday Club and Dinner Experiments are designed to feel personal, human and slightly sacred.",more:"This chapter builds retention and emotional depth. It creates the moments people tell close friends about but cannot fully explain online."},
+left:`<div class="kicker">Chapter 3</div><h1 class="title-xl">Inside the Insider</h1><p class="copy">Smaller rooms. Deeper meaning.</p><div class="rule"></div><div class="paper-chip">Tone<span>Intimate · personal · emotional · human</span></div><span class="page-num">027</span>`,
 right:`<div class="photo polaroid" style="height:380px;transform:rotate(-.8deg)"><span class="tape"></span><img src="poloroids.png"><div class="label">Memory Polaroids</div></div><span class="page-num">028</span>`
 },
 {
@@ -609,7 +654,7 @@ right:`<div style="height:100%;display:flex;flex-direction:column;justify-conten
 },
 {
 chapter:"insider",
-note:{kicker:"Inside / Grief Table",title:"Grief Table",body:"Grief Table is a carefully hosted dinner for conversations about loss, change, endings and adulthood. It must be held with sensitivity and strong facilitation.",a:"Community is not only built through fun. Deep belonging often forms when people feel safe enough to be honest.",b:"Small group, clear consent, careful prompts, no forced vulnerability, beautiful food, and a trained host or partner where needed.",more:"This format should be rare and protected. If done well, it becomes one of the most meaningful Sosh rooms — not for content, but for trust."},
+note:{kicker:"Inside / Grief Table",title:"Grief Table",body:"Grief Table is a carefully hosted dinner for conversations about loss, change, endings and adulthood. It must be held with sensitivity and strong facilitation.",a:"Community is not only built through fun. Deeper meaning often forms when people feel safe enough to be honest.",b:"Small group, clear consent, careful prompts, no forced vulnerability, beautiful food, and a trained host or partner where needed.",more:"This format should be rare and protected. If done well, it becomes one of the most meaningful Sosh rooms — not for content, but for trust."},
 left:`<div class="kicker">Grief Table</div><h2 class="title">Some rooms were quieter.</h2><p class="copy" style="margin-top:18px">Folded letters. Pressed flowers. Menus with almost no decoration.</p><span class="page-num">031</span>`,
 right:`<div class="photo" style="height:310px;margin-top:32px;transform:rotate(-1.4deg)"><span class="tape"></span><img src="handwritten.png"></div><p class="caption-hand" style="margin-top:28px">Nothing needed to be performed.</p><span class="page-num">032</span>`
 },
@@ -621,7 +666,7 @@ right:`<div style="height:100%;display:flex;flex-direction:column;justify-conten
 },
 {
 chapter:"insider",
-note:{kicker:"Inside / Social Rituals",title:"House Party, Sunday Club, Dinner Experiments",body:"These recurring formats make Sosh feel less like ticketed events and more like a rhythm in people’s lives.",a:"Belonging grows through repeated rituals. People need dependable rooms, not just special occasions.",b:"House Party feels hosted but informal. Sunday Club creates gentle weekend continuity. Dinner Experiments test unusual formats and prompts.",more:"These can become monthly membership anchors, making Sosh part of routine rather than one-off entertainment."},
+note:{kicker:"Inside / Social Rituals",title:"House Party, Sunday Club, Dinner Experiments",body:"These recurring formats make Sosh feel less like ticketed events and more like a rhythm in people’s lives.",a:"Meaning grows through repeated rituals. People need dependable rooms, not just special occasions.",b:"House Party feels hosted but informal. Sunday Club creates gentle weekend continuity. Dinner Experiments test unusual formats and prompts.",more:"These can become monthly membership anchors, making Sosh part of routine rather than one-off entertainment."},
 left:`<div class="kicker">House Party</div><h2 class="title">Not the conventional one.</h2><div class="rule"></div><div class="paper-chip">Living room rules<span>No loud networking. No forced games. Just hosted ease.</span></div><div class="paper-chip" style="margin-top:14px">Sunday Club<span>A recurring room for people who want to return.</span></div><span class="page-num">035</span>`,
 right:`<div class="photo polaroid" style="height:380px;transform:rotate(-1deg)"><span class="tape"></span><img src="communal.png"><div class="label">Dinner Experiments / Sunday Club</div></div><span class="page-num">036</span>`
 },
@@ -718,8 +763,8 @@ right:`<div class="kicker">Standing Reservations</div><h2 class="title">The tabl
 },
 {
 chapter:"partners",
-note:{kicker:"Chapter 7 / Partnerships",title:"Not sponsors. Ecosystem.",body:"Sosh should partner with brands that share one obsession: the feeling of being exactly where you are supposed to be, with the right people, at the right moment.",a:"Partnerships should make the memory more beautiful or more possible. They should never feel like logo placement.",b:"Coffee shops, hotels, wellness spaces, restaurants, creators, travel companies, local businesses and studios become part of the Sosh ecosystem.",more:"The partner is chosen by emotional fit. A coffee roaster, ceramics studio or hotel should feel like they already belong in the archive."},
-left:`<div class="kicker">Chapter 7</div><h1 class="title-xl">Partnerships</h1><p class="copy">Not sponsors. Ecosystem.</p><div class="rule"></div><div class="paper-chip">Artifacts<span>Coffee bags · keys · tickets · menus · ceramics · maps</span></div><span class="page-num">065</span>`,
+note:{kicker:"Chapter 7 / Keepers of the Feeling",title:"Belonging found an address.",body:"Sosh should partner with brands that share one obsession: the feeling of being exactly where you are supposed to be, with the right people, at the right moment.",a:"Partnerships should make the memory more beautiful or more possible. They should never feel like logo placement.",b:"Coffee shops, hotels, wellness spaces, restaurants, creators, travel companies, local businesses and studios become part of the Sosh ecosystem.",more:"The partner is chosen by emotional fit. A coffee roaster, ceramics studio or hotel should feel like they already belong in the archive."},
+left:`<div class="kicker">Chapter 7</div><h1 class="title-xl">Keepers of the Feeling</h1><p class="copy">The places we loved began helping.</p><div class="rule"></div><div class="paper-chip">Artifacts<span>Coffee bags · keys · tickets · menus · ceramics · maps</span></div><span class="page-num">065</span>`,
 right:`<div class="photo polaroid" style="height:385px;transform:rotate(-1deg)"><span class="tape"></span><img src="partnership.png"><div class="label">Partner Artifacts</div></div><span class="page-num">066</span>`
 },
 {
@@ -879,12 +924,10 @@ function updateSticky(note, chapter){
 function openArchive(){
   if(opened) return;
   opened = true;
-  cover.classList.add("opening");
   topbar.textContent = "Click right page to continue · left page to go back";
-  setTimeout(()=>{
-    scene.classList.add("opened");
-    render();
-  }, 1120);
+  scene.classList.add("opened");
+  render();
+  requestAnimationFrame(()=>cover.classList.add("opening"));
 }
 
 function nextPage(){
