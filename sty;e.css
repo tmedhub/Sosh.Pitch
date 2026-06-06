@@ -1,0 +1,513 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: Georgia, serif;
+    background:#0f0f10;
+    color:#f6f2ea;
+    overflow-x:hidden;
+}
+
+/* ==========================
+   BACKGROUND
+========================== */
+
+.background-glow{
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(255,200,120,.12),
+        transparent 55%
+    );
+
+    pointer-events:none;
+    z-index:0;
+}
+
+.dust{
+    position:fixed;
+    inset:0;
+
+    background-image:
+    radial-gradient(
+        rgba(255,255,255,.12) 1px,
+        transparent 1px
+    );
+
+    background-size:60px 60px;
+
+    opacity:.15;
+
+    animation:dustFloat 30s linear infinite;
+
+    pointer-events:none;
+}
+
+@keyframes dustFloat{
+
+    from{
+        transform:translateY(0px);
+    }
+
+    to{
+        transform:translateY(-120px);
+    }
+}
+
+/* ==========================
+   COVER
+========================== */
+
+.cover-screen{
+    width:100vw;
+    height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+}
+
+.cover-book{
+
+    width:500px;
+    height:700px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    transition:
+    transform .8s ease,
+    box-shadow .8s ease;
+}
+
+.cover-book:hover{
+
+    transform:
+    translateY(-12px)
+    rotateX(4deg);
+
+    box-shadow:
+    0 40px 80px rgba(0,0,0,.55);
+}
+
+.cover-image{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+    box-shadow:
+    0 30px 70px rgba(0,0,0,.55);
+}
+
+.cover-overlay{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:40px;
+}
+
+.archive-year{
+
+    letter-spacing:4px;
+    opacity:.6;
+
+    margin-bottom:18px;
+}
+
+.cover-overlay h1{
+
+    font-size:4rem;
+    font-weight:400;
+
+    letter-spacing:8px;
+
+    margin-bottom:18px;
+}
+
+.cover-overlay p{
+
+    max-width:340px;
+
+    line-height:1.8;
+
+    opacity:.7;
+}
+
+/* ==========================
+   BOOK
+========================== */
+
+.hidden{
+    display:none;
+}
+
+.book-section{
+
+    min-height:100vh;
+
+    padding:40px 0;
+
+    position:relative;
+}
+
+/* ==========================
+   TABS
+========================== */
+
+.chapter-tabs{
+
+    width:95%;
+
+    margin:auto;
+
+    display:flex;
+
+    gap:12px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    margin-bottom:40px;
+}
+
+.chapter-tabs button{
+
+    background:transparent;
+
+    border:none;
+
+    color:#bcae96;
+
+    cursor:pointer;
+
+    font-size:.95rem;
+
+    letter-spacing:1px;
+
+    transition:.3s;
+}
+
+.chapter-tabs button:hover{
+
+    color:white;
+}
+
+/* ==========================
+   BOOK CONTAINER
+========================== */
+
+.book-container{
+
+    width:min(1300px,92vw);
+
+    height:720px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    position:relative;
+
+    perspective:2000px;
+}
+
+.book-page{
+
+    background:
+    linear-gradient(
+        to bottom,
+        #f3ead8,
+        #e7dcc5
+    );
+
+    color:#222;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.left-page{
+
+    border-radius:
+    10px 0 0 10px;
+
+    box-shadow:
+    inset -12px 0 30px rgba(0,0,0,.08);
+}
+
+.right-page{
+
+    border-radius:
+    0 10px 10px 0;
+
+    box-shadow:
+    inset 12px 0 30px rgba(0,0,0,.08);
+}
+
+.book-container::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:0;
+
+    width:3px;
+    height:100%;
+
+    background:
+    rgba(0,0,0,.12);
+
+    transform:
+    translateX(-50%);
+}
+
+/* ==========================
+   LEFT PAGE
+========================== */
+
+.spread-image{
+
+    width:100%;
+    height:100%;
+}
+
+.spread-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+/* ==========================
+   RIGHT PAGE
+========================== */
+
+.spread-content{
+
+    padding:70px;
+}
+
+.archive-meta{
+
+    display:flex;
+    justify-content:space-between;
+
+    margin-bottom:50px;
+
+    font-size:.8rem;
+
+    letter-spacing:2px;
+
+    color:#666;
+}
+
+.spread-content h2{
+
+    font-size:3rem;
+    font-weight:400;
+
+    margin-bottom:30px;
+}
+
+.spread-content p{
+
+    font-size:1.2rem;
+
+    line-height:1.9;
+
+    max-width:400px;
+}
+
+.expand-button{
+
+    margin-top:60px;
+
+    border:none;
+
+    background:#111;
+
+    color:white;
+
+    padding:
+    16px 24px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.expand-button:hover{
+
+    transform:translateY(-3px);
+}
+
+/* ==========================
+   ARCHIVE PANEL
+========================== */
+
+.archive-panel{
+
+    position:fixed;
+
+    top:50%;
+    right:-700px;
+
+    transform:translateY(-50%);
+
+    width:650px;
+    height:88vh;
+
+    background:#f5efe3;
+
+    color:#222;
+
+    box-shadow:
+    -20px 0 50px rgba(0,0,0,.25);
+
+    transition:right .7s ease;
+
+    z-index:100;
+}
+
+.archive-panel.active{
+
+    right:30px;
+}
+
+.archive-scroll{
+
+    height:100%;
+
+    overflow:auto;
+
+    padding:60px;
+}
+
+.close-panel{
+
+    position:absolute;
+
+    right:20px;
+    top:20px;
+
+    background:none;
+    border:none;
+
+    font-size:2rem;
+
+    cursor:pointer;
+}
+
+.archive-tag{
+
+    letter-spacing:2px;
+
+    font-size:.8rem;
+
+    opacity:.5;
+
+    margin-bottom:10px;
+}
+
+.archive-header h2{
+
+    font-size:3rem;
+
+    margin-bottom:40px;
+
+    font-weight:400;
+}
+
+.archive-block{
+
+    margin-bottom:50px;
+}
+
+.archive-block h3{
+
+    margin-bottom:12px;
+
+    font-size:1.1rem;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+.archive-block p{
+
+    line-height:2;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:1100px){
+
+    .book-container{
+
+        grid-template-columns:1fr;
+
+        height:auto;
+    }
+
+    .left-page{
+
+        height:400px;
+    }
+
+    .right-page{
+
+        min-height:500px;
+    }
+
+    .archive-panel{
+
+        width:100%;
+        right:-100%;
+    }
+
+    .archive-panel.active{
+
+        right:0;
+    }
+
+}
